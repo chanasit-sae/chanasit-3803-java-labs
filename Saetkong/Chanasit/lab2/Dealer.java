@@ -1,4 +1,4 @@
-package Saetkong.Chanasit.lab2;
+package saetkong.chanasit.lab2;
 
 //This program take 3 arguments (the dealer's Name, number of clients and Dealer's gender)
 //then display those information in the following form:
@@ -14,7 +14,7 @@ public class Dealer {
     public static void main(String[] args) {
       int num_Argument = args.length; //number of argument
       if(num_Argument != 3) { //if the number of argument is not equal to exactly 3 the code won't run
-        System.out.println("Error: Invalid number of argument. Please provide exactly three argument.");
+        System.err.println("Error: Invalid number of argument. Please provide exactly three argument.");
         System.exit(0);
       }
 
