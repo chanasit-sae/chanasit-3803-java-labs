@@ -22,7 +22,8 @@ public class Dealer {
       String Name = args[0]; //Dealer's Name
       int num_clients = Integer.parseInt(args[1]); //Number of num_clients
       String Gender = args[2]; //Gender as it is   
-      System.out.println("Dealer's Name: " + Name);
+
+      System.out.println("Dealer's Name: " + Name); //print result
       System.out.println("Number of clients: " + num_clients);
       System.out.println("Gender: " + Gender);
     }

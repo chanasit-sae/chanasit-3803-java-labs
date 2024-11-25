@@ -10,7 +10,7 @@ package saetkong.chanasit.lab2;
 //last update: 25/11/2024
 
 public class RockPaperScissors { //checks if the number of argument is equals to 2
-  static void isTwoArgument(int num) {
+  static void hasTwoArgument(int num) {
     if(num != 2) {
         System.err.println("Error: Invalid number of argument. Please provide exactly two argument.");
         System.exit(0);
@@ -50,9 +50,9 @@ public class RockPaperScissors { //checks if the number of argument is equals to
 
   public static void main(String[] args) {
     int num_Argument = args.length; //number of argument
-    isTwoArgument(num_Argument); //check number of argument
+    hasTwoArgument(num_Argument); //check number of argument
 
-    String Player1_pick = args[0]; //initialize what player 1 and player 2 picks
+    String Player1_pick = args[0]; //takes what player 1 and player 2 picks
     String Player2_pick = args[1];
 
     Player1_pick = Player1_pick.toLowerCase(); //make them Lower case so that it's easier to do condition
@@ -63,9 +63,9 @@ public class RockPaperScissors { //checks if the number of argument is equals to
 
     String winner = getWinner(Player1_pick,Player2_pick); //get the winner based on game logic
 
-    System.out.println("Player 1 chooses: " + Player1_pick);
+    System.out.println("Player 1 chooses: " + Player1_pick); //print what each player pick
     System.out.println("Player 2 chooses: " + Player2_pick);
-    System.out.println(winner);
+    System.out.println(winner); //print result
   }
 }
 
