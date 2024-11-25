@@ -1,5 +1,4 @@
 package Saetkong.Chanasit.lab2;
-import java.util.Scanner;
 
 //This program take 3 arguments (the dealer's Name, number of clients and Dealer's gender)
 //then display those information in the following form:
