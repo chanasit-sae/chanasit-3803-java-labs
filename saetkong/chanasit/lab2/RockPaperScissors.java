@@ -3,8 +3,8 @@ package saetkong.chanasit.lab2;
 //this code is an implementation of rock paper scissors game
 //which it takes 2 input what player 1 and player 2 picks
 //and calculate the winner based on the tranditional Rock Paper Scissors game logic
-//coded by Chanasit Saetkong
 //
+//coded by Chanasit Saetkong
 //ID: 673040380-3
 //Sec1
 //last update: 25/11/2024
