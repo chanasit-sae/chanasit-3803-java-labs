@@ -9,6 +9,7 @@ package saetkong.chanasit.lab2;
 //coded by Chanasit Saetkong
 //ID: 673040380-3
 //Sec1
+//last update: 25/11/2024
 
 public class Dealer {
     public static void main(String[] args) {

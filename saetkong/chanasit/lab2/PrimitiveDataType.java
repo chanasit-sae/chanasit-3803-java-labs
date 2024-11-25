@@ -15,7 +15,8 @@ package saetkong.chanasit.lab2;
 //coded by Chanasit Saetkong
 //ID: 673040380-3
 //Sec1
-//
+//last update: 25/11/2024
+
 public class PrimitiveDataType {
     public static void main(String[] args) {
       String studentNumber = args[0]; //take first argument as sutdent ID
