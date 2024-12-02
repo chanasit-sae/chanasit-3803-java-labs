@@ -3,13 +3,11 @@ import java.util.Scanner;
 
 public class ConfigurableNumberGuessingGame {
 
-  public static int getInput() {
-    Scanner scanner = new Scanner(System.in);
+  public static int getInput(Scanner scanner) {
     return scanner.nextInt();
   }
 
-  public static int getMaxInput(int min) {
-    Scanner scanner = new Scanner(System.in);
+  public static int getMaxInput(int min,Scanner scanner) {
     int value = scanner.nextInt();
     while(value < min) {
       System.out.println("The max value must be at least equal to the min value");
@@ -20,8 +18,7 @@ public class ConfigurableNumberGuessingGame {
     return value;
   }
 
-  public static int getTriesInput() {
-    Scanner scanner = new Scanner(System.in);
+  public static int getTriesInput(Scanner scanner) {
     int value = scanner.nextInt();
     while(value < 0) {
       System.out.println("The maximum number of tries must be greater than 0");
@@ -33,21 +30,22 @@ public class ConfigurableNumberGuessingGame {
   }
 
   public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
     int tries = 1;
     System.out.print("Enter the min value:");
-    int min = getInput();
+    int min = getInput(scanner);
 
     System.out.print("Enter the max value:");
-    int max = getMaxInput(min);
+    int max = getMaxInput(min,scanner);
 
     System.out.print("Enter the maximum number of tries:");
-    int maxTries = getTriesInput();
+    int maxTries = getTriesInput(scanner);
 
     System.out.println("Welcome to a number quessing game!");
     int answer = min + (int)(Math.random() * (max - min) + 1);
 
     System.out.print("Enter an integer between " + min + " and " + max + ":");
-    int guess = getInput();
+    int guess = getInput(scanner);
     String highLow = "";
 
     while(guess != answer) {
@@ -62,8 +60,8 @@ public class ConfigurableNumberGuessingGame {
       if(guess < answer) highLow = "higher";
 
       System.out.println("Try a " + highLow + " number!!");
-      System.out.println("Enter an integer between 1 and 10:");
-      guess = getInput();
+      System.out.print("Enter an integer between 1 and 10:");
+      guess = getInput(scanner);
       
     }
 

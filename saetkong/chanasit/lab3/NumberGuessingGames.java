@@ -3,13 +3,11 @@ import java.util.Scanner;
 
 public class NumberGuessingGames {
 
-  public static int getInput() {
-    Scanner scanner = new Scanner(System.in);
+  public static int getInput(Scanner scanner) {
     return scanner.nextInt();
   }
 
-  public static int getMaxInput(int min) {
-    Scanner scanner = new Scanner(System.in);
+  public static int getMaxInput(int min,Scanner scanner) {
     int value = scanner.nextInt();
     while(value < min) {
       System.out.println("The max value must be at least equal to the min value");
@@ -20,8 +18,7 @@ public class NumberGuessingGames {
     return value;
   }
 
-  public static int getTriesInput() {
-    Scanner scanner = new Scanner(System.in);
+  public static int getTriesInput(Scanner scanner) {
     int value = scanner.nextInt();
     while(value < 0)
     {
@@ -33,14 +30,7 @@ public class NumberGuessingGames {
     return value;
   }
 
-  public static String getRepeat() {
-    System.out.print("Want to play again? (Y or y):");
-    Scanner scanner = new Scanner(System.in);
-    return scanner.nextLine().toLowerCase();
-
-  }
-
-  public static void runGame(int min,int max, int maxTries)
+  public static void runGame(int min,int max, int maxTries,Scanner scanner)
   {
     int tries = 1;
 
@@ -48,7 +38,7 @@ public class NumberGuessingGames {
     int answer = min + (int)(Math.random() * (max - min) + 1);
 
     System.out.print("Enter an integer between " + min + " and " + max + ":");
-    int guess = getInput();
+    int guess = getInput(scanner);
     String highLow = "";
 
     while(guess != answer) {
@@ -65,7 +55,7 @@ public class NumberGuessingGames {
 
       System.out.println("Try a " + highLow + " number!!");
       System.out.print("Enter an integer between 1 and 10:");
-      guess = getInput();
+      guess = getInput(scanner);
     }
 
     String time;
@@ -80,21 +70,25 @@ public class NumberGuessingGames {
 
   public static void main(String[] args)
   {
+    Scanner scanner = new Scanner(System.in);
     System.out.print("Enter the min value:");
-    int min = getInput();
+    int min = getInput(scanner);
 
     System.out.print("Enter the max value:");
-    int max = getMaxInput(min);
+    int max = getMaxInput(min,scanner);
 
     System.out.print("Enter the maximum number of tries:");
-    int maxTries = getTriesInput();
+    int maxTries = getTriesInput(scanner);
 
-    runGame(min,max,maxTries);
-    String decision = getRepeat();
+    runGame(min,max,maxTries,scanner);
+    System.out.print("Want to play again? (Y or y):");
+    Scanner repeat = new Scanner(System.in); 
+    String decision = repeat.nextLine().toLowerCase();
 
     while(decision.equals("y")) {
-      runGame(min,max,maxTries);
-      decision =  getRepeat();
+      runGame(min,max,maxTries,scanner);
+      System.out.print("Want to play again? (Y or y):");
+      decision = repeat.nextLine().toLowerCase();
     }
     System.out.println("Thank you for playing our games. Bye!");
   }

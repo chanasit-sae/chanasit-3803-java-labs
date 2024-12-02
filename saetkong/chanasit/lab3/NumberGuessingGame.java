@@ -3,19 +3,19 @@ import java.util.Scanner;
 
 public class NumberGuessingGame {
 
-  public static int getInput()
+  public static int getInput(Scanner scanner)
   {
     System.out.print("Enter an integer between 1 and 10:");
-    Scanner scanner = new Scanner(System.in);
     return scanner.nextInt();
   }
   public static void main(String[] args)
   {
+    Scanner scanner = new Scanner(System.in);
     int min = 1, max = 10, tries = 1;
     int answer = min + (int)(Math.random() * (max - min) + 1);
 
     System.out.println("Welcome to a number quessing game!");
-    int guess = getInput();
+    int guess = getInput(scanner);
     String highLow = "";
 
     while(guess != answer) {
@@ -27,7 +27,7 @@ public class NumberGuessingGame {
       System.out.println("Try a "+ highLow + " number!!");
       System.out.println("Enter an integer between 1 and 10:");
 
-      guess = getInput();
+      guess = getInput(scanner);
 
       if(tries >= 5)
       {
