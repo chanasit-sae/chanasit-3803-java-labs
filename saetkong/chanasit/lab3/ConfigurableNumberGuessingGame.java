@@ -3,18 +3,15 @@ import java.util.Scanner;
 
 public class ConfigurableNumberGuessingGame {
 
-  public static int getInput()
-  {
+  public static int getInput() {
     Scanner scanner = new Scanner(System.in);
     return scanner.nextInt();
   }
 
-  public static int getMaxInput(int min)
-  {
+  public static int getMaxInput(int min) {
     Scanner scanner = new Scanner(System.in);
     int value = scanner.nextInt();
-    while(value < min)
-    {
+    while(value < min) {
       System.out.println("The max value must be at least equal to the min value");
       System.out.println("Enter the max value:");
       scanner = new Scanner(System.in);
@@ -23,12 +20,10 @@ public class ConfigurableNumberGuessingGame {
     return value;
   }
 
-  public static int getTriesInput()
-  {
+  public static int getTriesInput() {
     Scanner scanner = new Scanner(System.in);
     int value = scanner.nextInt();
-    while(value < 0)
-    {
+    while(value < 0) {
       System.out.println("The maximum number of tries must be greater than 0");
       System.out.print("Enter the maximum number of tries:");
       scanner = new Scanner(System.in);
@@ -37,8 +32,7 @@ public class ConfigurableNumberGuessingGame {
     return value;
   }
 
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     int tries = 1;
     System.out.print("Enter the min value:");
     int min = getInput();
@@ -57,8 +51,7 @@ public class ConfigurableNumberGuessingGame {
     String highLow = "";
 
     while(guess != answer) {
-      if(tries >= maxTries)
-      {
+      if(tries >= maxTries) {
         System.out.println("You have tried " + maxTries + " times. You ran out of guesses");
         System.out.print("The answer is " + answer);
         System.exit(0);
@@ -81,8 +74,6 @@ public class ConfigurableNumberGuessingGame {
 
     System.out.println("Congratulations!");
     System.out.println("You have tried " + tries + time);
-
-
 
   }
 } 

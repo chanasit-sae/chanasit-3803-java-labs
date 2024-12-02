@@ -3,18 +3,15 @@ import java.util.Scanner;
 
 public class NumberGuessingGames {
 
-  public static int getInput()
-  {
+  public static int getInput() {
     Scanner scanner = new Scanner(System.in);
     return scanner.nextInt();
   }
 
-  public static int getMaxInput(int min)
-  {
+  public static int getMaxInput(int min) {
     Scanner scanner = new Scanner(System.in);
     int value = scanner.nextInt();
-    while(value < min)
-    {
+    while(value < min) {
       System.out.println("The max value must be at least equal to the min value");
       System.out.print("Enter the max value:");
       scanner = new Scanner(System.in);
@@ -23,8 +20,7 @@ public class NumberGuessingGames {
     return value;
   }
 
-  public static int getTriesInput()
-  {
+  public static int getTriesInput() {
     Scanner scanner = new Scanner(System.in);
     int value = scanner.nextInt();
     while(value < 0)
@@ -35,6 +31,13 @@ public class NumberGuessingGames {
       value = scanner.nextInt();
     }
     return value;
+  }
+
+  public static String getRepeat() {
+    System.out.print("Want to play again? (Y or y):");
+    Scanner scanner = new Scanner(System.in);
+    return scanner.nextLine().toLowerCase();
+
   }
 
   public static void runGame(int min,int max, int maxTries)
@@ -61,7 +64,7 @@ public class NumberGuessingGames {
       if(guess < answer) highLow = "higher";
 
       System.out.println("Try a " + highLow + " number!!");
-      System.out.println("Enter an integer between 1 and 10:");
+      System.out.print("Enter an integer between 1 and 10:");
       guess = getInput();
     }
 
@@ -87,13 +90,11 @@ public class NumberGuessingGames {
     int maxTries = getTriesInput();
 
     runGame(min,max,maxTries);
-    
-    System.out.print("Want to play again? (Y or y):");
-    Scanner scanner = new Scanner(System.in);
-    String decision = scanner.nextLine().toLowerCase();
-    while(decision.equals("y"))
-    {
+    String decision = getRepeat();
+
+    while(decision.equals("y")) {
       runGame(min,max,maxTries);
+      decision =  getRepeat();
     }
     System.out.println("Thank you for playing our games. Bye!");
   }
