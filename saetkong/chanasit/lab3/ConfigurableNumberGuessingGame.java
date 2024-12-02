@@ -16,7 +16,7 @@ public class ConfigurableNumberGuessingGame {
     while(value < min)
     {
       System.out.println("The max value must be at least equal to the min value");
-      System.out.print("Enter the max value:");
+      System.out.println("Enter the max value:");
       scanner = new Scanner(System.in);
       value = scanner.nextInt();
     }
@@ -69,7 +69,7 @@ public class ConfigurableNumberGuessingGame {
       if(guess < answer) highLow = "higher";
 
       System.out.println("Try a " + highLow + " number!!");
-      System.out.print("Enter an integer between 1 and 10:");
+      System.out.println("Enter an integer between 1 and 10:");
       guess = getInput();
       
     }

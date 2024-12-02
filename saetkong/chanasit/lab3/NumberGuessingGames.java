@@ -52,7 +52,7 @@ public class NumberGuessingGames {
       if(tries >= maxTries)
       {
         System.out.println("You have tried " + maxTries + " times. You ran out of guesses");
-        System.out.print("The answer is " + answer);
+        System.out.println("The answer is " + answer);
         return;
       }
       ++tries;
@@ -88,13 +88,14 @@ public class NumberGuessingGames {
 
     runGame(min,max,maxTries);
     
-    System.err.print("Want to play again? (Y or y):");
+    System.out.print("Want to play again? (Y or y):");
     Scanner scanner = new Scanner(System.in);
     String decision = scanner.nextLine().toLowerCase();
     while(decision.equals("y"))
     {
       runGame(min,max,maxTries);
     }
+    System.out.println("Thank you for playing our games. Bye!");
   }
 } 
 
