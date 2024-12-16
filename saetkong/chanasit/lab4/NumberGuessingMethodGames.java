@@ -1,10 +1,22 @@
 package saetkong.chanasit.lab4;
 import java.util.Scanner;
 
-public class NumberGuessingMethodGames {
+//this is a NumberGuessingGames
+//takes min, max, maximum amount of tries and user's answer
+//and the program will tell you wether
+//it's higher or lower than the answer
+//and when you get it right it says:
+//"Congratulations!"
+//"You have tried (n) time "
+//if user's tries exceeded it says
+//You have tried (n) times. You ran out of guesses
+//user can try again by enter 'Y'
 
+public class NumberGuessingMethodGames {
   public static int[] result = new int[3];
 
+
+  //takes max input
   public static int getMaxInput(int min,Scanner scanner) {
     int value = scanner.nextInt();
     while(value < min) {
@@ -16,6 +28,7 @@ public class NumberGuessingMethodGames {
     return value;
   }
 
+  //takes maximum amount of tries
   public static int getTriesInput() {
     Scanner scanner = new Scanner(System.in);
     int value = scanner.nextInt();
@@ -29,31 +42,33 @@ public class NumberGuessingMethodGames {
     return value;
   }
 
+  //randomize answer
   static int genAnswer(int min,int max) {
     int result = min + (int)(Math.random() * (max - min) + 1);
     return result;
   }
 
+  //main game logic
   public static void playGames() {
-    int min = result[0];
+    int min = result[0];//get value by functions called in configure()
     int max = result[1];
     int maxTries = result[2];
     Scanner scanner = new Scanner(System.in);
     int tries = 1;
 
-    int answer = genAnswer(min,max);
+    int answer = genAnswer(min,max);//get input min max 
     System.out.println("Welcome to a number guessing game!");
     System.out.print("Enter an integer between " + min + " and " + max +":");
     int guess = scanner.nextInt();
     String highLow = "";
     
     while(guess != answer) {
-      if(tries >= maxTries){
+      if(tries >= maxTries){ //Tries exceed maximum tries
         System.out.println("You have tried " + maxTries + " times. You ran out of guesses");
         System.out.println("The answer is " + answer);
         break;
       }
-      ++tries;
+      ++tries;//count try
 
       if(guess > answer) highLow = "lower";
       if(guess < answer) highLow = "higher";
@@ -63,8 +78,7 @@ public class NumberGuessingMethodGames {
       guess = scanner.nextInt();
     }
 
-    String time;
-
+    String time;//'s' after "time" or not
     if(tries == 1) time = " time";
     else time = " times";
 
@@ -87,6 +101,7 @@ public class NumberGuessingMethodGames {
     
   }
 
+  //get min, max, maximum tries
   public static void configure() {
     Scanner scanner = new Scanner(System.in);
     System.out.print("Enter the min value:");
