@@ -184,7 +184,15 @@ public class MatrixProcessor {
   public static void displayDiagonal() {
     if(rows != columns) System.out.println("Matrix is  not square. Cannot display diagonal elements");
     else {
-      for(int i=0;i<rows;i++) System.out.print(matrix[i][i] + " ");
+      for(int i=0;i<rows;i++)
+      {
+        for(int j=0;j<columns;j++)
+        {
+          if(i==j)System.out.print(" " + matrix[i][i]);
+          else System.out.print(" 0");
+        }
+      }
+
       displayMatrix(matrix);
     }
   }
