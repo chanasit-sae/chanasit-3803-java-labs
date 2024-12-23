@@ -1,21 +1,47 @@
 package saetkong.chanasit.lab5;
 import java.util.Scanner;
 
+//this program has 3 method
+//1.sumOfDigits() -> add all digits of a number together
+//2.reverseArray() -> reverse the given array
+//3.isPalindrome() -> check if the array is palindrome
+//@author chanasit saetkong 673040380-3
+
+
+
 public class RecursiveMethods {
-  public static int sumOfDigits(int n) {
+
+  /*add all the digit together Recursively
+   * 	* Example: For the number 123, the answer is 1+2+3 = 6
+ 	* @param number the input number
+ 	* @return sum of digits
+ 	*/
+  public static int sumOfDigits(int n) { 
     if(n < 10) return n;
     return n%10 + sumOfDigits(n/10);
   }
 
-  public static void reverseArray(int[] arr,int start,int end) {
-    if(start >= end) return; 
+  /*reverse the array Recursively 
+  * @param arr the array to reverse
+ 	* @param start starting index
+ 	* @param end ending index
+ 	*/
+  public static void reverseArray(int[] arr,int start,int end) { 
+  if(start >= end) return; 
     int temp = arr[start];
     arr[start] = arr[end];
     arr[end] = temp;
     reverseArray(arr,start+1,end-1);
   }
-  public static boolean isPalindrome(int[] arr, int start, int end) {
-    boolean palindrome = true;
+
+  /*check if the array is palindrome Recursively
+  * @param arr the array to check
+ 	* @param start starting index
+ 	* @param end ending index
+ 	* @return true if palindrome, false otherwise
+ 	*/
+
+  public static boolean isPalindrome(int[] arr, int start, int end) {    boolean palindrome = true;
     if(start >= end) return true;
     if(arr[start] == arr[end]) {
       isPalindrome(arr,start+1,end-1);

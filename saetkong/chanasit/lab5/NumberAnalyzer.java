@@ -1,6 +1,17 @@
 package saetkong.chanasit.lab5;
 
+//this program has 3 method
+//1.findMinMax -> get the min and max element of the given array
+//2.isSorted -> check if the given array is sorted
+//3.calculateRunningAverages -> get the average of each position
+
 public class NumberAnalyzer {
+
+
+  /*find the min and max element of the given array
+  * @param numbers the array to analyze
+ 	* @return an array of two elements where index 0 is minimum and index 1 is maximum
+ 	*/
   public static int[] findMinMax(int[] nums) {
     int len = nums.length;
     int min = nums[0];
@@ -14,7 +25,11 @@ public class NumberAnalyzer {
     return res;
 	}
 
-  public static boolean isSorted(int[] numbers) {
+  /*check if the given array is sorted
+ 	* @param numbers the input array
+ 	* @return array of running averages
+ 	*/
+  public static boolean isSorted(int[] numbers) {  
     int len = numbers.length;
     int temp = numbers[0];
     for(int i=0;i<len;i++)
@@ -24,8 +39,11 @@ public class NumberAnalyzer {
     return true;
 	}
 
-  public static double[] calculateRunningAverages(int[] nums) {
-    double sum = 0;
+  /*get the average of each of position 
+  * @param numbers the input array
+ 	* @return array of running averages
+ 	*/
+  public static double[] calculateRunningAverages(int[] nums) {    double sum = 0;
     double[] res = new double[nums.length];
     for(int i=0;i<nums.length;i++)
     {
