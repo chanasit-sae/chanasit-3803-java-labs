@@ -1,11 +1,22 @@
 package saetkong.chanasit.lab6;
 import java.util.Scanner;
 
+
+/**
+ *this is a number guessing game that calls a class form the GuessGame.java 
+ *this program acts as a GuessGame caller but has a few feature included: 
+ *1.configure() to configuring the values of min max and maxTries 
+ *2.playGames() for calling the playSingleGame from GuessGame and ask player if they wants to play again 
+ *@author coded by chanasit saetkong
+ *ID: 673040380-3
+ *sec: 1
+ */
 public class NumberGuessingOOPGame {
 
   public Scanner scanner = new Scanner(System.in);
   private GuessGame game;
 
+  /**get min max and maxTries from scanner*/
   public void configure() {
     System.out.print("Enter the min value: ");
     int min = scanner.nextInt();
@@ -17,8 +28,7 @@ public class NumberGuessingOOPGame {
     this.game = new GuessGame(min, max, maxTries);
   }
 
-
-
+  /**calls playSingleGame and ask if the player wants to play again or not */
   public void playGames() {
     boolean playAgain;
     do {
@@ -31,8 +41,6 @@ public class NumberGuessingOOPGame {
 
     System.out.println("Thank you for playing the Number Guessing Game!");
   }
-
-
 
   public static void main(String[] args)
   {
