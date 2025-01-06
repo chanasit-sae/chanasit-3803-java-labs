@@ -65,6 +65,11 @@ public class GuessGame {
   */
   public void setMaxTries(int min) {this.maxTries = maxTries;}
 
+  public void setAnswer(int ans) {this.answer = ans;}
+  public int getAnswer() {return answer;}
+  public void setAttemps(int att) {this.attempts = att;}
+  public int getAttemps() {return attempts;}
+
   /**cofigure min max and maxTries
    *@param min
    *@param max
