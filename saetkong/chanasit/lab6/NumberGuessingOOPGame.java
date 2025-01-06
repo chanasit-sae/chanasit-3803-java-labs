@@ -34,7 +34,7 @@ public class NumberGuessingOOPGame {
     do {
       boolean result = this.game.playSingleGame();
       System.out.println(result ? "You win" : "Better luck next time.");
-      System.out.print("Do you want to play again? (Y/N): ");
+      System.out.print("Do you want to play again? (y/n): ");
       playAgain = scanner.next().equalsIgnoreCase("y");
       if(playAgain) configure();
     }while (playAgain);

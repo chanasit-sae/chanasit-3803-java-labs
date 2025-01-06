@@ -76,9 +76,9 @@ public class GuessGameV2 {
     while(tmpMin > tmpMax) {
       System.out.println("Invalid input: max must be greater than or equal to min.");
       System.out.print("Enter the min value: ");
-      tmpmin = scanner.nextInt();
+      tmpMin = scanner.nextInt();
       System.out.print("Enter the max value: ");
-      tmpmax = scanner.nextInt();
+      tmpMax = scanner.nextInt();
     }
 
     while(tmpMaxTries < 1) {
@@ -109,7 +109,7 @@ public class GuessGameV2 {
     int tryCNT = 1;
     int guess;
     generateAnswer();
-    System.out.println("Welcome to the Number Guessing Game!");
+    System.out.println("Welcome to the Number Guessing Game V2!");
     do{
       System.out.print("Enter an integer between " +  min + " and " + max +  ": ");
       guess = scanner.nextInt();
@@ -127,7 +127,8 @@ public class GuessGameV2 {
       tryCNT++;
 
     }while(guess != answer && tryCNT <= maxTries);
- 
+
+    attempts = tryCNT;
 
     if(tryCNT > maxTries) 
     {
@@ -136,6 +137,11 @@ public class GuessGameV2 {
     }
     else return true;
   }
+
+  public String toString() {
+    return "Game Configuration: [Min: " + min + ", Max: " + max + ", Max Tries: " + maxTries + ", Attemps: " + attempts + "]";
+  }
+  
 
   
 

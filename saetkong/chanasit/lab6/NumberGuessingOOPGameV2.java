@@ -22,11 +22,11 @@ public class NumberGuessingOOPGameV2 {
     int min = scanner.nextInt();
     System.out.print("Enter the max value: ");
     int max = scanner.nextInt();
-    this.game.configure(min,max);
     System.out.print("Enter the maximum number of tries: ");
     int maxTries = scanner.nextInt();
 
     this.game = new GuessGameV2(min, max, maxTries);
+    System.out.println(this.game.toString());
   }
 
   /**calls playSingleGame and ask if the player wants to play again or not */
@@ -35,12 +35,12 @@ public class NumberGuessingOOPGameV2 {
     do {
       boolean result = this.game.playSingleGame();
       System.out.println(result ? "You win" : "Better luck next time.");
-      System.out.print("Do you want to play again? (Y/N): ");
+      System.out.print("Do you want to play again? (y/n): ");
       playAgain = scanner.next().equalsIgnoreCase("y");
       if(playAgain) configure();
     }while (playAgain);
 
-    System.out.println("Thank you for playing the Number Guessing Game!");
+    System.out.println("Thank you for playing the Number Guessing Game V2!");
   }
 
   public static void main(String[] args)
