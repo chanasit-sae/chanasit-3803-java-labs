@@ -1,12 +1,16 @@
 package saetkong.chanasit.lab6;
 import java.util.Scanner;
 
-/**this is a class for game logic which has the following method 
+/**this is a class for game logic with a record tracking the gamelog which has the following method 
  *1.constructor for initializing all the values
  *2.getter setter for all the values
  *3.configureGame() for gives new values to variables
  *4.generateAnswer() for randomizing answer
  *5.playSingleGame() to handle the game logic
+ *6.getGameLog() return the game logic
+ *7.addGameRecord() for adding the current game to the record
+ *8.getRecordCount() return record index
+ *9.getGameRecords() return the game records array
  *
  *@author coded by chanasit saetkong
  *ID: 673040380-3
