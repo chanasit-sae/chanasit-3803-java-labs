@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  *this is a number guessing game that calls a class form the GuessGame.java 
- *this program acts as a GuessGame caller but has a few feature included: 
+ *this program acts as a GuessGameV2 caller but has a few feature included: 
  *1.configure() to configuring the values of min max and maxTries 
  *2.playGames() for calling the playSingleGame from GuessGame and ask player if they wants to play again 
  *@author coded by chanasit saetkong

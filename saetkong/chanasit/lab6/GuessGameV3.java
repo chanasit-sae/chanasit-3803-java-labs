@@ -21,6 +21,8 @@ public class GuessGameV3 extends GuessGameV2 {
   private int guessCount;
   private boolean win;
 
+
+  //constructor
   public GuessGameV3() { 
     super(); 
     guessCount = 0;
@@ -28,6 +30,7 @@ public class GuessGameV3 extends GuessGameV2 {
     guesses = new int[getMaxTries()];
   }
 
+  //constructor with parameters
   public GuessGameV3(int min, int max, int MaxTries) {
     super(min,max,MaxTries);
     guessCount = 0;
@@ -35,6 +38,7 @@ public class GuessGameV3 extends GuessGameV2 {
     guesses = new int[getMaxTries()];
   }
 
+  //initializing min max maxTries and guesses array
   public void configureGame(int min, int max, int maxTries) {
     super.configureGame(min,max,maxTries);
     guesses = new int[getMaxTries()];
@@ -42,6 +46,7 @@ public class GuessGameV3 extends GuessGameV2 {
     win = false;
   }
 
+  //handles game logic
   public boolean playSingleGame() {
     int tryCNT = 1;
     int guess;
@@ -85,6 +90,7 @@ public class GuessGameV3 extends GuessGameV2 {
     }
   }
 
+  //return gamelog as string with range, maxTries, guess count, result and the guesses player made
   public String getGameLog(){
     StringBuilder sb = new StringBuilder();
     sb.append("Range: [" + this.getMin() + "-" + this.getMax() + "], ");
@@ -98,6 +104,7 @@ public class GuessGameV3 extends GuessGameV2 {
     return sb.toString();
   } 
 
+  //add the played game to the record
   public static void addGameRecord(GuessGameV3 game) {
     if (recordIndex < MAX_GAMES) {
       gameRecords[recordIndex++] = game;
@@ -106,10 +113,12 @@ public class GuessGameV3 extends GuessGameV2 {
     }
   }
 
+  //index getter
   public static int getRecordCount() {
     return recordIndex;
   }
-
+  
+  //array getter
   public static GuessGameV3[] getGameRecords() {
     return gameRecords;
   }

@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 /**
  *this is a number guessing game that calls a class form the GuessGame.java 
- *this program acts as a GuessGame caller but has a few feature included: 
+ *this program acts as a GuessGameV3 caller with extra feature included: 
  *1.configure() to configuring the values of min max and maxTries 
- *2.playGames() for calling the playSingleGame from GuessGame and ask player if they wants to play again 
+ *2.playGames() for calling the playSingleGame from GuessGame and ask player if they wants to play again.
+ *3.viewRecords() for player to  choose to view all past game record or a Specific one.
  *@author coded by chanasit saetkong
  *ID: 673040380-3
  *sec: 1
@@ -16,9 +17,10 @@ public class NumberGuessingMethodGamesV3 {
   private GuessGameV3 game;
   boolean continuePlaying = true;
 
+  //get min max maxTries make a GuessGameV3 object and add to the record
   public void configure() {
     int maxTries;
-      this.game = new GuessGameV3();
+    this.game = new GuessGameV3();
 
     System.out.print("Enter the min value: ");
     int min = scanner.nextInt();  
@@ -52,6 +54,7 @@ public class NumberGuessingMethodGamesV3 {
 
   }
 
+  //play game and display game menu after each play
   public void playGames() {
     int playAgain;
     boolean result = this.game.playSingleGame();
@@ -79,6 +82,7 @@ public class NumberGuessingMethodGamesV3 {
     System.out.println("Thank you for playing the Number Guessing Game V3!");
   }
 
+  //ask player if they want to view all records or the specific one
   public void viewRecords() {
     int choose;
     System.out.println("View:\n1. Complete Records\n2. Specific Game Record");
@@ -98,6 +102,7 @@ public class NumberGuessingMethodGamesV3 {
     }
   }
 
+  //display all past gamelog
   public void displayCompleteRecords() {
     GuessGameV3[] gameRecords = GuessGameV3.getGameRecords();
     for (int i = 0 ; i  < GuessGameV3.getRecordCount() ; i ++ ) {
@@ -105,6 +110,7 @@ public class NumberGuessingMethodGamesV3 {
     }
   }
 
+  //display a specific gamelog
   public void displaySpecificRecords() {
     int GameNumber;
     System.out.print("Enter the game number to view: "); 
