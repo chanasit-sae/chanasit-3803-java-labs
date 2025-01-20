@@ -1,0 +1,17 @@
+package saetkong.chanasit.lab6;
+import java.util.Scanner;
+
+/**this is a class for game logic which has the following method 
+*1.constructor for initializing all the values
+*2.getter setter for all the values
+*3.configureGame() for gives new values to variables
+*4.generateAnswer() for randomizing answer
+*5.playSingleGame() to handle the game logic
+*
+*@author coded by chanasit saetkong
+*ID: 673040380-3
+*sec: 1
+*/
+public class GuessGameV3 extends GuessGameV2 {
+  Scanner scanner = new Scanner(System.in);
+}

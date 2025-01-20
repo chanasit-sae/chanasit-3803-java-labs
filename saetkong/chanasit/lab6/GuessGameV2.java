@@ -57,29 +57,36 @@ public class GuessGameV2 extends GuessGame {
         int tryCNT = 1;
         int guess;
         generateAnswer(); 
+        int answer = getAnswer();
+        int min = getMin();
+        int max = getMax();
+        int maxTries = getMaxTries();
         System.out.println("Welcome to the Number Guessing Game V2!");
         do {
-            System.out.print("Enter an integer between " + getMin() + " and " + getMax() + ": ");
+            System.out.print("Enter an integer between " + min + " and " + max + ": ");
             guess = scanner.nextInt();
-            if (guess < getMin() || guess > getMax()) {
-                System.out.println("Invalid input: guess must be between " + getMin() + " and " + getMax());
+            if (guess < getMin() || guess > max) {
+                System.out.println("Invalid input: guess must be between " + min + " and " + max);
                 continue;
             }
 
             String highLow;
-            if (guess > getAnswer()) highLow = "lower";
-            else if (guess < getAnswer()) highLow = "higher";
+            if (guess > answer) highLow = "lower";
+            else if (guess < answer) highLow = "higher";
             else break;
 
             System.out.println("Try a " + highLow + " number!");
             tryCNT++;
 
-        } while (guess != getAnswer() && tryCNT <= getMaxTries());
+        } while (guess != answer && tryCNT <= maxTries);
 
         if (tryCNT > getMaxTries()) {
             System.out.println("Sorry, you've used all your attempts. The correct answer was: " + getAnswer());
             return false;
-        } else return true;
+        } else {
+          System.out.println("Congratulations! You've guessed the number in " + tryCNT + " attempts.");
+          return true;
+        }
     }
 
     @Override
