@@ -3,10 +3,10 @@ package saetkong.chanasit.lab7;
 public class AppleWatch extends MobileDevice {
   private String modelName;
 
-  public void setmodelName(String modelName) {this.modelName = modelName;}
-  public String getmodelName() {return modelName;}
+  public void setModelName(String modelName) {this.modelName = modelName;}
+  public String getModelName() {return modelName;}
 
-  public AppleWatch(String color,double price, String modelName ) {
+  public AppleWatch(String color,double price, String modelName) {
     this.color = color;
     this.price = price;
     this.modelName = modelName;

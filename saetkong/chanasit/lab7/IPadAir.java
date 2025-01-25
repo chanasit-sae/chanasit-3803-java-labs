@@ -12,7 +12,7 @@ public class IPadAir extends MobileDevice {
   
   public static String getChipName() {return CHIP_NAME;}
   public void setStorage(double storage) {this.storage = storage;}
-  public double getStorage() {return storage;}
+  public double getStorage() {return this.storage;}
   public boolean isWatch() {return false;}
   public String toString() {return "IPadAir [color=" + this.color + ", price=" + this.price + ", storage=" + this.storage + ", chip=" + this.CHIP_NAME + "]";}
 }
