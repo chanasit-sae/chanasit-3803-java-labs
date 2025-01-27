@@ -15,7 +15,7 @@ public class AppleWatchNike extends AppleWatch implements RunnerStatsCollector,H
   public AppleWatchNike(String color,double price, String modelName,double totalDistance,double avgHeartRate,double avgSleepHours) {
     super(color,price,modelName);
     this.totalDistance = totalDistance;
-    this. avgHeartRate = avgHeartRate;
+    this.avgHeartRate = avgHeartRate;
     this.avgSleepHours = avgSleepHours;
   }
 
