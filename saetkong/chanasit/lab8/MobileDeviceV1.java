@@ -38,12 +38,7 @@ public class MobileDeviceV1 extends MySimpleWindow {
     PriceLabel = new JLabel("Price:");
     PriceTextField = new JTextField(15);
 
-    resetButton = new JButton("Cancel");
-    submitButton = new JButton("OK");
-
     TypeLabel = new JLabel("Type:");
-    JRadioButton TypeRadioSmartphone = new JRadioButton("Smartphone",true);
-    JRadioButton TypeRadioTablet = new JRadioButton("Tablet");
     typeRadioGroup = new ButtonGroup();
 
     formPanel.add(DeviceNameLabel);
@@ -54,6 +49,9 @@ public class MobileDeviceV1 extends MySimpleWindow {
     formPanel.add(PriceTextField);
     formPanel.add(TypeLabel);
 
+    JRadioButton TypeRadioSmartphone = new JRadioButton("Smartphone",true);
+    JRadioButton TypeRadioTablet = new JRadioButton("Tablet");
+
     typeRadioGroup.add(TypeRadioSmartphone);
     typeRadioGroup.add(TypeRadioTablet);
 
@@ -62,11 +60,11 @@ public class MobileDeviceV1 extends MySimpleWindow {
 
     formPanel.add(typePanel);
 
+    resetButton = new JButton("Cancel");
+    submitButton = new JButton("OK");
     confirmPanel.add(resetButton);
     confirmPanel.add(submitButton);
 
-
-    setLayout(new BorderLayout());
     mainPanel.add(formPanel,BorderLayout.NORTH);
     mainPanel.add(confirmPanel,BorderLayout.SOUTH);
     add(mainPanel);
