@@ -2,6 +2,16 @@ package saetkong.chanasit.lab7;
 import java.util.Comparator;
 import java.util.Arrays;
 
+//this is a class which implements Comparator interface
+//with the compare method to takes two MobileDevice objects
+//and compare them by price first then 
+//check if they are both iPad Air, comparing storage and then color 
+//check if they are both Apple Watch, comparing the model name and then color
+//If both are in different types, compare the color
+//
+//@auther chanasit saetkong
+//modified date 27/1/2025
+
 public class SortMobileDevices implements Comparator<MobileDevice> {
 
   public int compare(MobileDevice device1,MobileDevice device2) {

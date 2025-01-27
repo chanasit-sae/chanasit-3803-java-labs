@@ -2,9 +2,20 @@ package saetkong.chanasit.lab7;
 import java.util.Comparator;
 import java.util.Arrays;
 
+//this the main class which implements the Comparator interface
+//the Comparator compare method is overrided to compare the price of 
+//two MobileDevice object
+//
+//the main method create an array of MobileDevice and sort them using
+//the comparator created above
+//
+//@auther chanasit saetkong
+//modified date 27/1/2025
+
 public class SortMobileDevicesbyPrice implements Comparator<MobileDevice> {
+
   public int compare(MobileDevice device1,MobileDevice device2) {
-    return (int)device1.getPrice() - (int)device2.getPrice();
+    return (int)(device1.getPrice() - device2.getPrice());
   }
 
   public static void main(String[] args) {

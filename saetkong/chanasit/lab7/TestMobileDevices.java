@@ -1,7 +1,13 @@
 package saetkong.chanasit.lab7;
 
+//this class implements MobileDevice, IPadAir, and AppleWatch public class TestMobileDevices
+//with a static method comparePrice for comparing the prices of objects
+//@auther chanasit saetkong
+//modified date 27/1/2025
+
 public class TestMobileDevices {
 
+  //takes in two MobileDevice objects and compare the price of them
   public static void comparePrice(MobileDevice device1,MobileDevice device2) {
     if(device1.getPrice() < device2.getPrice()) {
       System.out.println(device1 + " is cheaper than " + device2);
