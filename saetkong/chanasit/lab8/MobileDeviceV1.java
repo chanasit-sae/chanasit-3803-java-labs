@@ -18,13 +18,14 @@ public class MobileDeviceV1 extends MySimpleWindow {
   protected JLabel TypeLabel;
   protected ButtonGroup typeRadioGroup;
 
-  MobileDeviceV1(String title) {
+  protected JPanel mainPanel;
+
+  protected MobileDeviceV1(String title) {
     super(title);
   }
 
-
-  public void addComponents() {
-    JPanel mainPanel = new JPanel(new BorderLayout());
+  protected void addComponents() {
+    mainPanel = new JPanel(new BorderLayout());
     JPanel formPanel = new JPanel(new GridLayout(4,2));
     JPanel typePanel = new JPanel(new GridLayout(1,2)); 
     JPanel confirmPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -68,13 +69,6 @@ public class MobileDeviceV1 extends MySimpleWindow {
     mainPanel.add(formPanel,BorderLayout.NORTH);
     mainPanel.add(confirmPanel,BorderLayout.SOUTH);
     add(mainPanel);
-  }
-
-  protected void setFrameFeatures() {
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setVisible(true);
-    this.pack();
-    this.setLocationRelativeTo(null);
   }
 
   public static void createAndShowGUI() {
