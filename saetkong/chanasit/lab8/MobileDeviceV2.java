@@ -28,7 +28,7 @@ public class MobileDeviceV2 extends MobileDeviceV1 {
     extraPanel.add(osLabel);
     extraPanel.add(osComboBox);
 
-    featureLabel = new JLabel("Feature:");
+    featureLabel = new JLabel("Features:");
     featureTextArea = new JTextArea(3, 25);
     JScrollPane featureScrollerPane = new JScrollPane(featureTextArea);
     
