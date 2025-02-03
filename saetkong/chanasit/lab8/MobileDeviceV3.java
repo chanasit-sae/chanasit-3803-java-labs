@@ -23,6 +23,10 @@ public class MobileDeviceV3 extends MobileDeviceV2 {
 
   public void addComponents() {
     super.addComponents();
+    addMenus();
+  }
+  
+  public void addMenus() {
     menuBar = new JMenuBar();
     fileMenu = new JMenu("File");
     newMI = new JMenuItem("New");
@@ -42,9 +46,7 @@ public class MobileDeviceV3 extends MobileDeviceV2 {
     addFontMenuItems();
     menuBar.add(configMenu);
 
-
     setJMenuBar(menuBar);
-
   }
 
   public void addSizeMenuItems() {

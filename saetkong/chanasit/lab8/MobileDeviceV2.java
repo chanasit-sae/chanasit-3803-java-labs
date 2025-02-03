@@ -24,6 +24,7 @@ public class MobileDeviceV2 extends MobileDeviceV1 {
     osLabel = new JLabel("Operating System:");    
     osComboBox = new JComboBox<>(osOptions);
     osComboBox.setSelectedItem("Android"); 
+    osComboBox.setEditable(false);
 
     extraPanel.add(osLabel);
     extraPanel.add(osComboBox);
