@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
-import saetkong.chanasit.lab8.MobileDeviceV3;
 
 public class MobileDeviceV6 extends MobileDeviceV5 {
   public MobileDeviceV6(String title) {
@@ -14,6 +13,9 @@ public class MobileDeviceV6 extends MobileDeviceV5 {
   public void addComponents() {
     super.addComponents();
     setLabelStyle();
+    setTextFieldStyle();
+    setJListColor();
+    setConfrimButtonColor();
   }
 
   public void setLabelStyle() {
@@ -44,7 +46,27 @@ public class MobileDeviceV6 extends MobileDeviceV5 {
 
   public void setTextFieldStyle() {
     DeviceNameTextField.setBackground(Color.LIGHT_GRAY);
+    BrandTextField.setBackground(Color.LIGHT_GRAY);
+    PriceTextField.setBackground(Color.LIGHT_GRAY);
     featureTextArea.setBackground(Color.decode("#FFFFCC"));
+    featureTextArea.setForeground(Color.DARK_GRAY);
+    featureTextArea.setFont(new Font("Arial", Font.ITALIC, 14));
+  }
+
+  public void setJListColor() {
+    vendorsJList.setBackground(Color.LIGHT_GRAY);
+    vendorsJList.setForeground(Color.decode("#006400"));
+    vendorsJList.setSelectionBackground(Color.YELLOW);
+    vendorsJList.setSelectionForeground(Color.BLACK);
+    vendorsJList.setFont(new Font("Arial", Font.BOLD, 14));
+  }
+
+  public void setConfrimButtonColor() {
+    resetButton.setForeground(Color.RED);
+    resetButton.setBackground(Color.WHITE);
+    submitButton.setForeground(Color.GREEN);
+    submitButton.setBackground(Color.WHITE);
+
   }
 
   public static void createAndShowGUI() {
