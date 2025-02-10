@@ -18,11 +18,12 @@ public class ReadImage extends JPanel{
   }
 
   public void paintComponent(Graphics g) {
-    g.drawImage(img, 0, 0, null);
+    Graphics2D g2d = (Graphics2D)g;
+    g2d.drawImage(img, 0, 0, img.getWidth() / 2,img.getHeight() / 2, null);
   }
 
-  public Dimension getPrefferedSize() {
+  public Dimension getPreferredSize() {
     if (img == null) return new Dimension(100, 100);
-    else return new Dimension(img.getWidth()+200, img.getHeight()+1000);
+    else return new Dimension(img.getWidth()/2, img.getHeight()/2);
   }
 }

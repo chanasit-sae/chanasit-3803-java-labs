@@ -16,6 +16,15 @@ public class MobileDeviceV7 extends MobileDeviceV6 {
     JPanel centerWrapper2 = new JPanel(new BorderLayout());
     ReadImage imagePanel = new ReadImage(imgPath);
 
+    
+    DeviceNameTextField.setText("Samsung Galaxy S25 Ultra");
+    BrandTextField.setText("Samsung");
+    PriceTextField.setText("46900");
+    featureTextArea.setText("- 6.8-inch AMELOD Display\n- 120Hz Refresh Rate\n5000mAh Battery with Fast Charging");
+    //featureTextArea.setForeground(Color.DARK_GRAY);
+    //featureTextArea.setFont(new Font("Arial", Font.ITALIC, 14));
+
+
     centerWrapper2.add(centerWrapper, BorderLayout.CENTER);
     centerWrapper2.add(imagePanel, BorderLayout.SOUTH);
 
