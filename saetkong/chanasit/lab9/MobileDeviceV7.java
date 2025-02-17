@@ -28,7 +28,7 @@ public class MobileDeviceV7 extends MobileDeviceV6 {
     DeviceNameTextField.setText("Samsung Galaxy S25 Ultra");
     BrandTextField.setText("Samsung");
     PriceTextField.setText("46900");
-    featureTextArea.setText("- 6.8-inch AMELOD Display\n- 120Hz Refresh Rate\n- 5000mAh Battery with Fast Charging");
+    featureTextArea.setText("-200MP Camera\n-1TB Storage\n-Snapdragon Gen 4 Processor\n-5000mAh Battery\n- 6.8-inch AMELOD Display\n- 120Hz Refresh Rate\n- 5000mAh Battery with Fast Charging");
 
     // Add the old panel and image panel into the new one
     centerWrapper2.add(centerWrapper, BorderLayout.CENTER);
