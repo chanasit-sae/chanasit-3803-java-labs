@@ -10,7 +10,7 @@ import javax.swing.event.*;
 //-added Mnemonic keys for new, open, save and exit menu items 
 //coded by: chanasit saetkong
 //ID: 673040380-3
-//modify date: 17/2/2025
+//modify date: 3/3/2025
 
 public class MobileDeviceV11 extends MobileDeviceV10 implements ActionListener{
 

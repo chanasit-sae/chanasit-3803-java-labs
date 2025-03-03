@@ -11,7 +11,7 @@ import javax.swing.event.*;
 //there will be a message pop-up to show the changed value
 //coded by: chanasit saetkong
 //ID: 673040380-3
-//modify date: 17/2/2025
+//modify date: 3/3/2025
 
 public class MobileDeviceV10 extends MobileDeviceV9 implements ListSelectionListener, ChangeListener{
 
