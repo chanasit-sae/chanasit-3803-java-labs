@@ -5,7 +5,9 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-
+//this class 
+//-added message showing when radio buttton is selected
+//-added Mnemonic keys for new, open, save and exit menu items 
 //coded by: chanasit saetkong
 //ID: 673040380-3
 //modify date: 17/2/2025
@@ -16,7 +18,7 @@ public class MobileDeviceV11 extends MobileDeviceV10 implements ActionListener{
   public MobileDeviceV11(String title) {
     super(title);
   }
-
+  
   //adding action listener to the menu items
   protected void addListeners() {
     super.addListeners();  
@@ -36,6 +38,7 @@ public class MobileDeviceV11 extends MobileDeviceV10 implements ActionListener{
     }
   }
 
+  //add Mnemonic keys for new open save and exit menu items
   public void addMnemonicKeys() {
     // New menu item
     newMI.setMnemonic(KeyEvent.VK_N);
