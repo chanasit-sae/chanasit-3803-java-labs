@@ -1,4 +1,4 @@
-package saetkong.chanasit.lab10;
+package saetkong.chanasit.lab12;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class MobileDeviceV12 extends MobileDeviceV11 implements ActionListener{
-  MobileDeviceV12(String title) {
+public class MobileDeviceV12 extends MobileDeviceV11 implements ActionListener {
+  protected MobileDeviceV12(String title) {
     super(title);
   }
 
@@ -82,8 +82,6 @@ public class MobileDeviceV12 extends MobileDeviceV11 implements ActionListener{
     PriceTextField.setName("Price");
   }
 
-
-  //set font size of textField and textArea
   public static void createAndShowGUI() {
     MobileDeviceV12 mdv12 = new MobileDeviceV12("Mobile Device V12");
     mdv12.addComponents();
