@@ -41,6 +41,7 @@ public class MobileDeviceV14 extends MobileDeviceV13 implements ActionListener {
       try (FileWriter fileWriter = new FileWriter(file)) {
         // Write data to the file
         fileWriter.write(deviceMessage);
+        fileWriter.close();
       } catch (IOException e) {
         JOptionPane.showMessageDialog(null, "Error writing to file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
       }
@@ -81,6 +82,7 @@ public class MobileDeviceV14 extends MobileDeviceV13 implements ActionListener {
           }
 
           deviceMessage += deviceList.get(deviceList.size() - 1) + "\n";
+
         }
 
         JOptionPane.showMessageDialog(null,"Read devices from the file: " + filePath + " are as follows:\n" + deviceMessage, "Message", JOptionPane.INFORMATION_MESSAGE);
