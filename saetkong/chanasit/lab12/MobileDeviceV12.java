@@ -8,20 +8,27 @@ import saetkong.chanasit.lab10.MobileDeviceV11;
 import java.util.List;
 import java.util.ArrayList;
 
+//this program extends from MobileDeviceV11
+//it purpose is to check if the message in textfield are valid
+//if it's not valid it'll prevent user to enter message in the next textfield
+//as for price textfield it also check for number validation(non-negative and contain only number)
+//coded by: chanasit saetkong
+//modify date: 13/3/2025
 
 public class MobileDeviceV12 extends MobileDeviceV11 implements ActionListener {
   protected MobileDeviceV12(String title) {
     super(title);
   }
 
+  //adding listener to the textfields
   public void addListeners() {
     super.addListeners();  
     DeviceNameTextField.addActionListener(this);
     BrandTextField.addActionListener(this);
     PriceTextField.addActionListener(this);
-    
   }
 
+  //make each textfield call its validation method
   public void actionPerformed(ActionEvent e) {
     super.actionPerformed(e);
     Object srcObject = e.getSource();
@@ -34,8 +41,9 @@ public class MobileDeviceV12 extends MobileDeviceV11 implements ActionListener {
     }
   }
 
+  //check validation of device name and brand textfield
   public void handleNormalTextField(JTextField tf, JComponent nextComponent) {
-    if(tf.getText().isEmpty()) {
+    if(tf.getText().isEmpty()) { //check empty
       JOptionPane.showMessageDialog(null, "Please enter some data in " + tf.getName(), "Notification", JOptionPane.INFORMATION_MESSAGE);
 
       tf.requestFocusInWindow();
@@ -46,17 +54,19 @@ public class MobileDeviceV12 extends MobileDeviceV11 implements ActionListener {
     }
   }
   
+  //check validation for price textfield
   public void handlePosNumTextField(JTextField tf, JComponent nextComponent)
   {
     try {
-      double num = Double.parseDouble(tf.getText());
+      double num = Double.parseDouble(tf.getText());//translate text to Double
+                                                    //if it failed the exception will be called
     
-      if(tf.getText().isEmpty()) {
+      if(tf.getText().isEmpty()) {//check empty 
         JOptionPane.showMessageDialog(null, "Please enter some data in " + tf.getName(), "Notification", JOptionPane.INFORMATION_MESSAGE);
         return;
       }
 
-      if(num <= 0) {
+      if(num <= 0) {//check for negative number
         JOptionPane.showMessageDialog(null, "Price must be a positive number", "Notification", JOptionPane.ERROR_MESSAGE);
         return;
       }
