@@ -44,6 +44,8 @@ public class MobileDeviceV14 extends MobileDeviceV13 implements ActionListener {
     if (result == fc.APPROVE_OPTION) {//if the user choose a file
       // Get the selected file
       File file = fc.getSelectedFile();
+      String filePath = file.getAbsolutePath();
+      JOptionPane.showMessageDialog(null, "Data is saved to " + filePath + " successfully!", "save", JOptionPane.INFORMATION_MESSAGE);
 
       try (FileWriter fileWriter = new FileWriter(file)) {
         // Write data to the file as text

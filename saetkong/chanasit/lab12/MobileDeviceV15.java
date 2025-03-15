@@ -82,6 +82,8 @@ public class MobileDeviceV15 extends MobileDeviceV14 implements ActionListener, 
     if (result == fc.APPROVE_OPTION) {
       // Get the selected file
       File file = fc.getSelectedFile();
+      String filePath = file.getAbsolutePath();
+      JOptionPane.showMessageDialog(null, "Data is saved to " + filePath + " successfully!", "save", JOptionPane.INFORMATION_MESSAGE);
 
       try (FileWriter fileWriter = new FileWriter(file)) {
         // Write data to the file
@@ -99,6 +101,8 @@ public class MobileDeviceV15 extends MobileDeviceV14 implements ActionListener, 
     if (result == fc.APPROVE_OPTION) {
       // Get the selected file
       File file = fc.getSelectedFile();
+      String filePath = file.getAbsolutePath();
+      JOptionPane.showMessageDialog(null, "Data is saved to " + filePath + " successfully!", "save", JOptionPane.INFORMATION_MESSAGE);
 
       try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file))) {
         // Write data to the file
@@ -183,6 +187,9 @@ public class MobileDeviceV15 extends MobileDeviceV14 implements ActionListener, 
           deviceList.add(device);
           deviceMessage += deviceList.get(deviceList.size() - 1) + "\n"; //update display message
         }
+
+        JOptionPane.showMessageDialog(null,"Reading from file: " + filePath + "\n" + deviceMessage, "Message", JOptionPane.INFORMATION_MESSAGE);
+
       } catch (IOException | ClassNotFoundException e) {
         JOptionPane.showMessageDialog(null, "Error reading file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
       }   

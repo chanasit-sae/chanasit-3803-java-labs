@@ -49,7 +49,7 @@ public class MobileDeviceV12 extends MobileDeviceV11 implements ActionListener {
       tf.requestFocusInWindow();
       nextComponent.setEnabled(false);
     } else {
-      JOptionPane.showMessageDialog(null, "You press Enter in Device Name Field: " + tf.getText(), "Notification", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, tf.getName() + " is changed to " + tf.getText(), "Notification", JOptionPane.INFORMATION_MESSAGE);
       nextComponent.setEnabled(true);
     }
   }
@@ -58,13 +58,14 @@ public class MobileDeviceV12 extends MobileDeviceV11 implements ActionListener {
   public void handlePosNumTextField(JTextField tf, JComponent nextComponent)
   {
     try {
-      double num = Double.parseDouble(tf.getText());//translate text to Double
-                                                    //if it failed the exception will be called
     
       if(tf.getText().isEmpty()) {//check empty 
         JOptionPane.showMessageDialog(null, "Please enter some data in " + tf.getName(), "Notification", JOptionPane.INFORMATION_MESSAGE);
         return;
       }
+
+      double num = Double.parseDouble(tf.getText());//translate text to Double
+                                                    //if it failed the exception will be called
 
       if(num <= 0) {//check for negative number
         JOptionPane.showMessageDialog(null, "Price must be a positive number", "Notification", JOptionPane.ERROR_MESSAGE);
